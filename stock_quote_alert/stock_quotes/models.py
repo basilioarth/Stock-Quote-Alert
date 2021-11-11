@@ -13,9 +13,10 @@ class StockQuote(models.Model):
     
 class StockQuoteHist(models.Model):
     price = models.FloatField()
-    update_at =  models.DateTimeField(null=True)
     change_percent = models.FloatField()
+    updated_by_api_at =  models.DateTimeField(null=True, auto_now_add=True)
+    last_consult_at =  models.DateTimeField(null=True, auto_now_add=True)
     fk_stock_quote = models.ForeignKey('StockQuote', on_delete=models.CASCADE, null=True)
 
     def __str__(self):
-        return f"{self.fk_stock_quote.name} ({self.fk_stock_quote.symbol}): {self.price}, {self.change_percent} - {self.update_at}"
+        return f"{self.fk_stock_quote.name} ({self.fk_stock_quote.symbol}): {self.price}, {self.change_percent} - {self.last_consult_at}"

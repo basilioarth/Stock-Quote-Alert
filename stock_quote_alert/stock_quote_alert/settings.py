@@ -10,7 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import os
 from pathlib import Path
+#from dotenv import load_dotenv
+#load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -39,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'stock_quotes.apps.StockQuotesConfig',
     'users.apps.UsersConfig',
-    'gm2m'
+    'gm2m',
 ]
 
 MIDDLEWARE = [
@@ -129,4 +132,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # AUTHMODELS
 AUTH_USER_MODEL = 'users.User'
-AUTH_STOCK_QUOTE_MODEL = 'stock_quotes.StockQuote'
+AUTH_STOCK_QUOTE_MODEL = "stpck_quotes.StockQuote"

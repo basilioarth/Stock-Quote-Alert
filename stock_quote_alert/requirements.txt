@@ -1,1 +1,3 @@
 django-gm2m==1.1.1
+django-apscheduler
+python-dotenv
