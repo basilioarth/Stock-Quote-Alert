@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import StockQuote, StockQuoteHist
 
-# Register your models here.
+admin.site.register(StockQuote)
+admin.site.register(StockQuoteHist)
