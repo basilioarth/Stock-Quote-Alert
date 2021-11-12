@@ -1,3 +1,4 @@
+Django
 django-gm2m
 django-apscheduler
 python-dotenv
