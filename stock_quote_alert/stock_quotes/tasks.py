@@ -59,6 +59,7 @@ def update_stock_quotes():
 
                     send_mail(subject, message, os.environ.get('EMAIL_HOST_USER'), [get_object_or_404(User, pk=user_stock_quote['user_id']).email], fail_silently=False)
                     print("E-mail de sugestão de venda enviado para {} {}!\n".format(get_object_or_404(User, pk=user_stock_quote['user_id']).first_name, get_object_or_404(User, pk=user_stock_quote['user_id']).last_name))
+        
 
 def start():
     scheduler = BackgroundScheduler(timezone="Europe/Berlin")

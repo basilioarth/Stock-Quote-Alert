@@ -1,3 +1,6 @@
 from django.shortcuts import render
+from .models import StockQuoteHist
 
-# Create your views here.
+def dashboard(request):
+    stock_quotes = StockQuoteHist.objects.values()
+    return render(request, "stock_quotes/dashboard.html", {"StockQuoteHist": stock_quotes})
